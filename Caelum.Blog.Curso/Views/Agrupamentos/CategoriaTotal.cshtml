@@ -1,0 +1,5 @@
+﻿@model IEnumerable<CategoriaTotalViewModel>
+
+@foreach (var cat in Model) {
+    <li>@cat.Nome (@cat.Total)</li>
+}

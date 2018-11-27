@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 
 
-namespace Caelum.Fn23.Curso.Areas.Admin.Controllers
+namespace Caelum.Blog.Curso.Areas.Admin.Controllers
 {
     [Authorize]
     public class PostController : Controller
@@ -29,7 +29,7 @@ namespace Caelum.Fn23.Curso.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            return View(Dao.Lista);
+            return View(Dao.Lista.ToList());
         }
 
         public ActionResult Novo()
@@ -54,7 +54,7 @@ namespace Caelum.Fn23.Curso.Areas.Admin.Controllers
             if (post != null)
             {
                 Dao.Remover(post);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { area = "Admin" } );
             }
             return HttpNotFound();
         }
@@ -104,7 +104,7 @@ namespace Caelum.Fn23.Curso.Areas.Admin.Controllers
             post.Publicado = true;
             post.DataPublicacao = DateTime.Now;
             Dao.Alterar(post);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { area = "Admin" });
         }
 
         [HttpPost]

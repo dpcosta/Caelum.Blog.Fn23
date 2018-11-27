@@ -13,7 +13,7 @@ namespace Caelum.Fn23.Curso.DAO
     {
         private readonly BlogContext _contexto;
 
-        public IList<Post> Lista => this._contexto.Posts.ToList();
+        public IQueryable<Post> Lista => this._contexto.Posts.AsQueryable();
 
         public PostDaoEF(BlogContext contexto)
         {

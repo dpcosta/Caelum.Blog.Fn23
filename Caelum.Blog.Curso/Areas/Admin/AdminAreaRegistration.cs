@@ -17,7 +17,7 @@ namespace Caelum.Fn23.Curso.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { controller = "post", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Post", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

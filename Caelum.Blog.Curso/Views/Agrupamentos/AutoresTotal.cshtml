@@ -1,0 +1,7 @@
+﻿@model IEnumerable<AutorTotalViewModel>
+
+
+    @foreach (var autor in Model)
+    {
+        <li>@autor.Autor (@autor.Total)</li>
+    }

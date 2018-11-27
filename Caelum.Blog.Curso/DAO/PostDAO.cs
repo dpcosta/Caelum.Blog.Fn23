@@ -3,6 +3,7 @@ using Caelum.Fn23.Curso.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace Caelum.Fn23.Curso.DAO
 {
@@ -39,7 +40,7 @@ namespace Caelum.Fn23.Curso.DAO
             };
         }
 
-        public IList<Post> Lista
+        public IQueryable<Post> Lista
         {
             get
             {
@@ -57,7 +58,7 @@ namespace Caelum.Fn23.Curso.DAO
                         }
                     }
                 }
-                return lista;
+                return lista.AsQueryable();
             }
         }
 

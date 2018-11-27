@@ -7,7 +7,7 @@ namespace Caelum.Fn23.Curso.DAO
 {
     public interface IDataAccessObject<T> : IDisposable
     {
-        IList<T> Lista { get; }
+        IQueryable<T> Lista { get; }
         T BuscaPorId(int id);
         void Incluir(T obj);
         void Alterar(T obj);

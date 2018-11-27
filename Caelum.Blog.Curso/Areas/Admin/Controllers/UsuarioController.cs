@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Caelum.Fn23.Curso.Areas.Admin.Controllers
+namespace Caelum.Blog.Curso.Areas.Admin.Controllers
 {
     public class UsuarioController : Controller
     {
