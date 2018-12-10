@@ -1,0 +1,39 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login - Resenha Cultural</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <main id="login-form">
+            <h2>Resenha Cultural - Login</h2>
+            <div asp-validation-summary="All"></div>
+            <form asp-action="Autentica" method="post">
+                <div class="form-group">
+                    <label asp-for="LoginName"></label>
+                    <input asp-for="LoginName" class="form-control"/>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input type="password" asp-for="Password" class="form-control"/>
+                </div>
+
+                <button class="btn btn-primary">Login</button>
+
+            </form>
+        </main>
+    </div>
+    <partial name="Scripts" />
+</body>
+</html>
+

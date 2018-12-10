@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Resenha Cultural</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>Resenha Cultural</h1>
+            <p>Críticas bem humoradas sobre filmes, etc.</p>
+        </div>
+    </header>
+
+    <div class="container clearfix">
+        <!--região principal-->
+        <main>
+            @RenderBody()
+        </main>
+
+        <aside>
+            <div>
+                <h3>Buscar</h3>
+                <!--formulário de busca-->
+            </div>
+            <div>
+                <h3>Categorias</h3>
+                <!--lista de categorias-->
+            </div>
+            <div>
+                <h3>Autores</h3>
+                <!--lista de autores-->
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy;Resenha Cultural 2018</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@{
+    var usuario = ViewContext.HttpContext.Session.GetString("usuario");
+    var logado = JsonConvert
+        .DeserializeObject<Usuario>(usuario);
+}
+<aside>
+    <h1>Administração</h1>
+    <p>
+        Seja bem vindo, @logado.Login!
+        <a asp-action="Logout" asp-controller="Usuario" asp-area="">
+            [Logout]
+        </a>
+    </p>
+    <ul>
+        <li><a asp-action="Index" asp-controller="Post" asp-area="Admin">Posts</a></li>
+        <li>
+            <a asp-action="Index" asp-controller="Usuario" asp-area="">
+            Usuários
+            </a> 
+        </li>
+    </ul>
+</aside>

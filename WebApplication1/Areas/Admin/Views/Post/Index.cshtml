@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Post>
+
+<h1>Lista de posts</h1>
+<a asp-action="Novo" class="btn btn-primary">Adicionar</a>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Título</th>  
+        <th>Resumo</th>
+        <th>Categoria</th>
+        <th>Publicado</th>
+        <th>Ações</th>
+    </tr>
+    @foreach(var post in Model)
+    {
+        <tr>
+            <td>@post.Id</td>
+            <td>
+                <a asp-action="Detalhe" asp-route-id="@post.Id" >
+                    @post.Titulo
+                </a>
+            </td>
+            <td>@post.Resumo</td>
+            <td>@post.Categoria</td>
+            <td>
+                @if (post.Publicado)
+                {
+                    @Html.Raw(post.DataPublicacao.ToString("dd/MM/yyyy"))
+                } else
+                {
+                    <span></span>
+                }
+            </td>
+            <td>
+                <a asp-action="Publicar" asp-route-id="@post.Id" class="btn btn-warning">
+                    Publicar
+                </a>
+                <a class="btn btn-danger"
+                    asp-action="Excluir" 
+                    asp-route-id="@post.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>

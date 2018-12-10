@@ -1,0 +1,22 @@
+﻿@model Post
+
+<h1>Incluir Post</h1>
+<form asp-action="Adiciona" method="post">
+    <label asp-for="Titulo"></label> 
+    <input asp-for="Titulo" class="form-control" />
+    <span asp-validation-for="Titulo"></span>
+        
+    <label asp-for="Resumo"></label>
+    <textarea asp-for="Resumo" class="form-control">
+    </textarea>
+    <span asp-validation-for="Resumo"></span>
+        
+    <label asp-for="Categoria"></label>
+    <input asp-for="Categoria" class="form-control" />
+        
+    <button class="btn btn-primary">Cadastrar</button>
+</form>
+
+@section Scripts {
+    <partial name="Scripts" />
+}

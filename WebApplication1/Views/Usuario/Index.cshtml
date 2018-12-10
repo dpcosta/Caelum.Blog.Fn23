@@ -1,0 +1,45 @@
+﻿@using WebApplication1.Extensions;
+@model IEnumerable<Usuario>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var logado = ViewContext.HttpContext.Session.Get<Usuario>("usuario");
+}
+
+<h2>Usuários cadastrados</h2>
+<p>
+    <a asp-action="Novo" class="btn btn-default">Incluir</a>
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @if (item.Id != logado.Id)
+                {
+                    <a asp-action="Excluir" asp-route-id="@item.Id" asp-area="">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                }
+            </td>
+        </tr>
+     }
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Post>
+
+@foreach (var post in Model)
+{
+    <article>
+        <h1>@post.Titulo</h1>
+        <p>@post.Resumo</p>
+    </article>
+}
